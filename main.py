@@ -1,10 +1,14 @@
+import sys
 from stats import num_of_words
-from stats import num_of_char
 from stats import sorted_list_dict
 
 def main():
 
-    file_path = "books/frankenstein.txt"
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+        
+    file_path = sys.argv[1]
 
     sorted_list = sorted_list_dict(file_path)
 
